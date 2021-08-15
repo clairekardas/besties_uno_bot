@@ -1,8 +1,9 @@
-# Besties Uno Bot [![forthebadge](https://raw.githubusercontent.com/clairekardas/besties_uno_bot/master/images/readme/draw-two-no-u.svg)](https://forthebadge.com/)
+# Besties Uno Bot 🌈
 
+[![forthebadge](https://raw.githubusercontent.com/clairekardas/besties_uno_bot/master/images/readme/draw-two-no-u.svg)](https://forthebadge.com/)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg?style=flat-square)](./LICENSE)
 
-<img align=left src="https://raw.githubusercontent.com/clairekardas/besties_uno_bot/master/images/readme/logo-small.png" alt="logo" />
+<img src="https://raw.githubusercontent.com/clairekardas/besties_uno_bot/master/images/readme/logo-small.png">
 
 Telegram Bot that allows you to play UNO via inline queries. The bot runs as [@besties_uno_bot](http://telegram.me/besties_uno_bot) and is based on https://github.com/jh0ker/mau_mau_bot 😋
 
