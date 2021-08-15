@@ -69,3 +69,4 @@ target/
 
 # Database file
 uno.sqlite3
+.DS_Store
