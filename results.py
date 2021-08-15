@@ -77,7 +77,7 @@ def add_no_game(results):
             input_message_content=
             InputTextMessageContent(_('Not playing right now. Use /new to '
                                       'start a game or /join to join the '
-                                      'current game in this group'))
+                                      'current game in this group 😋'))
         )
     )
 
@@ -87,7 +87,7 @@ def add_not_started(results):
     results.append(
         InlineQueryResultArticle(
             "nogame",
-            title=_("The game wasn't started yet"),
+            title=_("The game wasn't started yet, dumbass! 😋"),
             input_message_content=
             InputTextMessageContent(_('Start the game with /start'))
         )
@@ -150,8 +150,8 @@ def add_draw(player, results):
         Sticker(
             "draw", sticker_file_id=c.STICKERS['option_draw'],
             input_message_content=
-            InputTextMessageContent(__('Drawing {number} card',
-                                       'Drawing {number} cards', n,
+            InputTextMessageContent(__('Drawing {number} card 😔',
+                                       'Drawing {number} cards 😭', n,
                                        multi=player.game.translate)
                                     .format(number=n))
         )
@@ -217,13 +217,13 @@ def add_card(game, card, results, can_play):
 def game_info(game):
     players = player_list(game)
     return InputTextMessageContent(
-        _("Current player: {name}")
+        _("Current bestie: {name} 😋")
         .format(name=display_name(game.current_player.user)) +
         "\n" +
         _("Last card: {card}").format(card=repr(game.last_card)) +
         "\n" +
-        _("Player: {player_list}",
-          "Players: {player_list}",
+        _("Bestie: {player_list}",
+          "Besties: {player_list}",
           len(players))
         .format(player_list=" -> ".join(players))
     )
