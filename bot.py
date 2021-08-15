@@ -231,14 +231,14 @@ def kick_player(update: Update, context: CallbackContext):
     except (KeyError, IndexError):
             send_async(context.bot, chat.id,
                    text=_("No game is running at the moment. "
-                          "Create a new game with /new"),
+                          "Create a new game with /new 😋"),
                    reply_to_message_id=update.message.message_id)
             return
 
     if not game.started:
         send_async(context.bot, chat.id,
                    text=_("The game is not started yet. "
-                          "Join the game with /join and start the game with /start"),
+                          "Join the game with /join and start the game with /start 😋"),
                    reply_to_message_id=update.message.message_id)
         return
 
