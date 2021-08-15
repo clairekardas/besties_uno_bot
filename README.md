@@ -10,9 +10,13 @@ Telegram Bot that allows you to play UNO via inline queries. The bot runs as [@b
 It's made by besties, for besties, featuring pride flag cards and slang text 🏳️‍🌈 
 
 To run the bot yourself, you will need: 
-- Python (tested with 3.4+)
-- The [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) module
-- [Pony ORM](https://ponyorm.com/)
+- Python (tested with 3.4+) 🐍
+- The [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) module 💻
+- [Pony ORM](https://ponyorm.com/) 🦄
+- Lots of patience ⏳
+- Pizza 🍕
+
+This version of the bot is still under devlopment 👩‍💻
 
 ## Setup
 - Get a bot token from [@BotFather](http://telegram.me/BotFather) and change configurations in `config.json`.
