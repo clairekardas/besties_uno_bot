@@ -113,9 +113,9 @@ STICKERS = {
     'y_draw': 'BQADBAADPwIAAl9XmQABaPYK8oYg84cC',
     'y_skip': 'BQADBAADQwIAAl9XmQABO_AZKtxY6IMC',
     'y_reverse': 'BQADBAADQQIAAl9XmQABZdQFahGG6UQC',
-    'draw_four': 'BQADBAAD9QEAAl9XmQABVlkSNfhn76cC',
-    'colorchooser': 'BQADBAAD8wEAAl9XmQABl9rUOPqx4E4C',
-    'option_draw': 'BQADBAAD-AIAAl9XmQABxEjEcFM-VHIC',
+    'draw_four': 'CAACAgQAAxkBAAECwC1hGDDTwNy-7hdH3H1Itpsb6NONtgAClw0AAvx_wFCIIFlU0fJzlCAE',
+    'colorchooser': 'CAACAgQAAxkBAAECwCthGDCZxPwqWaiYH6RD6_TkECTfuwACnhAAAnPgwFD4CgNKMQxtsyAE',
+    'option_draw': 'CAACAgQAAxkBAAECv-FhF_BEfuKqfDpbZSH84pYWomVsNgACBQsAAnCNwFCMgEW7fo8duSAE',
     'option_pass': 'BQADBAAD-gIAAl9XmQABcEkAAbaZ4SicAg',
     'option_bluff': 'BQADBAADygIAAl9XmQABJoLfB9ntI2UC',
     'option_info': 'BQADBAADxAIAAl9XmQABC5v3Z77VLfEC'
@@ -174,8 +174,8 @@ STICKERS_GREY = {
     'y_draw': 'BQADBAADqwIAAl9XmQABMt-2zW0VYb4C',
     'y_skip': 'BQADBAADrwIAAl9XmQABIDf-_TuuxtEC',
     'y_reverse': 'BQADBAADrQIAAl9XmQABm9M0Zh-_UwkC',
-    'draw_four': 'BQADBAADYQIAAl9XmQAB_HWlvZIscDEC',
-    'colorchooser': 'BQADBAADXwIAAl9XmQABY_ksDdMex-wC'
+    'draw_four': 'CAACAgQAAxkBAAECwDFhGDEPVx3meB_Bly557kiWz2wV1wACqgwAAoawwFA_9P7b4iW5UyAE',
+    'colorchooser': 'CAACAgQAAxkBAAECwC9hGDEMe0z5N_bdJcw3bvnTyHxwvAACSQsAAk_4wFDbzaGKZrFAUCAE'
 }
 
 
