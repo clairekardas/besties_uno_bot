@@ -49,7 +49,7 @@ def do_skip(bot, player, job_queue=None):
         send_async(bot, chat.id,
                    text=__("Waiting time to skip this player has "
                         "been reduced to {time} seconds.\n"
-                        "Next player: {name}", multi=game.translate)
+                        "Next bestie: {name}", multi=game.translate)
                    .format(time=n,
                            name=display_name(next_player.user))
         )
@@ -65,7 +65,7 @@ def do_skip(bot, player, job_queue=None):
             send_async(bot, chat.id,
                        text=__("{name1} ran out of time "
                             "and has been removed from the game!\n"
-                            "Next player: {name2}", multi=game.translate)
+                            "Next bestie: {name2}", multi=game.translate)
                        .format(name1=display_name(skipped_player.user),
                                name2=display_name(next_player.user)))
             logger.info("{player} was skipped! "
@@ -100,14 +100,14 @@ def do_play_card(bot, player, result_id):
         us.cards_played += 1
 
     if game.choosing_color:
-        send_async(bot, chat.id, text=__("Please choose a color", multi=game.translate))
+        send_async(bot, chat.id, text=__("Go choose a color! 🌈", multi=game.translate))
 
     if len(player.cards) == 1:
-        send_async(bot, chat.id, text="UNO!")
+        send_async(bot, chat.id, text="UNO! 😇")
 
     if len(player.cards) == 0:
         send_async(bot, chat.id,
-                   text=__("{name} won!", multi=game.translate)
+                   text=__("{name} won! 🥳 congrats bestie 👩‍❤️‍💋‍👩", multi=game.translate)
                    .format(name=user.first_name))
 
         if us.stats:
@@ -170,7 +170,8 @@ def do_call_bluff(bot, player):
     else:
         game.draw_counter += 2
         send_async(bot, chat.id,
-                   text=__("{name1} didn't bluff! Giving 6 cards to {name2}",
+                   text=__("hehe, {name1} didn't bluff! 😚 Giving 700 cards to {name2}/n"
+                           "jk, 6 cards 😋",
                            multi=game.translate)
                    .format(name1=player.prev.user.first_name,
                            name2=player.user.first_name))

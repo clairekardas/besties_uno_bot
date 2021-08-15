@@ -91,7 +91,7 @@ def new_game(update: Update, context: CallbackContext):
         game.owner.append(update.message.from_user.id)
         game.mode = DEFAULT_GAMEMODE
         send_async(context.bot, chat_id,
-                   text=_("Created a new game! Join the game with /join "
+                   text=_("ay, new game! 👩‍❤️‍💋‍👩 Join the game with /join hehe 😋/n"
                           "and start the game with /start"))
 
 
@@ -117,12 +117,12 @@ def kill_game(update: Update, context: CallbackContext):
 
         try:
             gm.end_game(chat, user)
-            send_async(context.bot, chat.id, text=__("Game ended!", multi=game.translate))
+            send_async(bot, chat.id, text=__("Game ended! 😇", multi=game.translate))
 
         except NoGameInChatError:
-            send_async(context.bot, chat.id,
-                       text=_("The game is not started yet. "
-                              "Join the game with /join and start the game with /start"),
+            send_async(bot, chat.id,
+                       text=_("The game is not started yet. Join the game with /join hehe 😋"
+                          "and start the game with /start"),
                        reply_to_message_id=update.message.message_id)
 
     else:
@@ -366,7 +366,7 @@ def start_game(update: Update, context: CallbackContext):
 
         elif len(game.players) < MIN_PLAYERS:
             send_async(context.bot, chat.id,
-                       text=__("At least {minplayers} players must /join the game "
+                       text=__("At least {minplayers} besties must /join the game "
                               "before you can start it").format(minplayers=MIN_PLAYERS))
 
         else:
@@ -377,9 +377,9 @@ def start_game(update: Update, context: CallbackContext):
                 player.draw_first_hand()
             choice = [[InlineKeyboardButton(text=_("Make your choice!"), switch_inline_query_current_chat='')]]
             first_message = (
-                __("First player: {name}\n"
-                   "Use /close to stop people from joining the game.\n"
-                   "Enable multi-translations with /enable_translations",
+                __("First bestie: {name} 🌈\n"
+                   "enjoy the game!\n"
+                   "if you find any bugs, go slap @clairoo 🐛",
                    multi=game.translate)
                 .format(name=display_name(game.current_player.user)))
 
@@ -430,7 +430,7 @@ def close_game(update: Update, context: CallbackContext):
 
     if not games:
         send_async(context.bot, chat.id,
-                   text=_("There is no running game in this chat."))
+                   text=_("There is no running game in this chat, dumbass! 🙄"))
         return
 
     game = games[-1]
@@ -438,7 +438,7 @@ def close_game(update: Update, context: CallbackContext):
     if user.id in game.owner:
         game.open = False
         send_async(context.bot, chat.id, text=_("Closed the lobby. "
-                                        "No more players can join this game."))
+                                        "No more besties can join this game."))
         return
 
     else:
@@ -458,15 +458,15 @@ def open_game(update: Update, context: CallbackContext):
 
     if not games:
         send_async(context.bot, chat.id,
-                   text=_("There is no running game in this chat."))
+                   text=_("There is no running game in this chat, dumbass! 🙄"))
         return
 
     game = games[-1]
 
     if user.id in game.owner:
         game.open = True
-        send_async(context.bot, chat.id, text=_("Opened the lobby. "
-                                        "New players may /join the game."))
+        send_async(bot, chat.id, text=_("Opened the lobby. "
+                                        "New besties may /join the game 😋"))
         return
     else:
         send_async(context.bot, chat.id,
@@ -484,8 +484,8 @@ def enable_translations(update: Update, context: CallbackContext):
     games = gm.chatid_games.get(chat.id)
 
     if not games:
-        send_async(context.bot, chat.id,
-                   text=_("There is no running game in this chat."))
+        send_async(bot, chat.id,
+                   text=_("There is no running game in this chat, dumbass! 🙄"))
         return
 
     game = games[-1]
@@ -512,8 +512,8 @@ def disable_translations(update: Update, context: CallbackContext):
     games = gm.chatid_games.get(chat.id)
 
     if not games:
-        send_async(context.bot, chat.id,
-                   text=_("There is no running game in this chat."))
+        send_async(bot, chat.id,
+                   text=_("There is no running game in this chat, dumbass! 🙄"))
         return
 
     game = games[-1]
@@ -543,7 +543,7 @@ def skip_player(update: Update, context: CallbackContext):
     player = gm.player_for_user_in_chat(user, chat)
     if not player:
         send_async(context.bot, chat.id,
-                   text=_("You are not playing in a game in this chat."))
+                   text=_("There is no running game in this chat, dumbass! 🙄"))
         return
 
     game = player.game
@@ -695,9 +695,9 @@ def process_result(update: Update, context: CallbackContext):
 
     if game_is_running(game):
         nextplayer_message = (
-            __("Next player: {name}", multi=game.translate)
+            __("🌈 Next bestie: {name}", multi=game.translate)
             .format(name=display_name(game.current_player.user)))
-        choice = [[InlineKeyboardButton(text=_("Make your choice!"), switch_inline_query_current_chat='')]]
+        choice = [[InlineKeyboardButton(text=_("Make your choice! 😋"), switch_inline_query_current_chat='')]]
         send_async(context.bot, chat.id,
                         text=nextplayer_message,
                         reply_markup=InlineKeyboardMarkup(choice))
