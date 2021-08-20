@@ -90,7 +90,7 @@ def new_game(bot, update):
         game.owner.append(update.message.from_user.id)
         game.mode = DEFAULT_GAMEMODE
         send_async(bot, chat_id,
-                   text=_("Yay, new game! 👩‍❤️‍💋‍👩 Join the game with /join"
+                   text=_("Yay, new game! 👩‍❤️‍💋‍👩 Join the game with /join "
                           "and start the game with /start hehe 😋"))
 
 
