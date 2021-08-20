@@ -90,7 +90,7 @@ def new_game(bot, update):
         game.owner.append(update.message.from_user.id)
         game.mode = DEFAULT_GAMEMODE
         send_async(bot, chat_id,
-                   text=_("Yay, new game! 👩‍❤️‍💋‍👩 Join the game with /join /n "
+                   text=_("Yay, new game! 👩‍❤️‍💋‍👩 Join the game with /join"
                           "and start the game with /start hehe 😋"))
 
 
@@ -438,8 +438,8 @@ def close_game(bot, update):
 
     if user.id in game.owner:
         game.open = False
-        send_async(bot, chat.id, text=_("Closed the lobby. "
-                                        "No more besties can join this game."))
+        send_async(bot, chat.id, text=_("Closed the game lobby 😔"
+                                        "No more besties can join this game. Create a new game with /new 😇"))
         return
 
     else:
