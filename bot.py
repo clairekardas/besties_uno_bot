@@ -90,8 +90,8 @@ def new_game(bot, update):
         game.owner.append(update.message.from_user.id)
         game.mode = DEFAULT_GAMEMODE
         send_async(bot, chat_id,
-                   text=_("Yay, new game! 👩‍❤️‍💋‍👩 Join the game with /join hehe 😋/n"
-                          "and start the game with /start"))
+                   text=_("Yay, new game! 👩‍❤️‍💋‍👩 Join the game with /join /n "
+                          "and start the game with /start hehe 😋"))
 
 
 @user_locale
@@ -107,7 +107,7 @@ def kill_game(bot, update):
 
     if not games:
             send_async(bot, chat.id,
-                       text=_("There is no running game in this chat."))
+                       text=_("There is no running game in this chat atm 😓"))
             return
 
     game = games[-1]
@@ -378,8 +378,8 @@ def start_game(bot, update, args, job_queue):
             choice = [[InlineKeyboardButton(text=_("Make your choice!"), switch_inline_query_current_chat='')]]
             first_message = (
                 __("First bestie: {name} 🌈\n"
-                   "enjoy the game!\n"
-                   "if you find any bugs, go slap @clairoo 🐛",
+                   "enjoy the game!"
+                   "if you find any bugs, go slap @claireoo 🐛\n",
                    multi=game.translate)
                 .format(name=display_name(game.current_player.user)))
 
@@ -672,13 +672,13 @@ def process_result(bot, update, job_queue):
         mode = result_id[5:]
         game.set_mode(mode)
         logger.info("Gamemode changed to {mode}".format(mode = mode))
-        send_async(bot, chat.id, text=__("Gamemode changed to {mode}".format(mode = mode)))
+        send_async(bot, chat.id, text=__("Changed the gamemode to {mode} 🤩".format(mode = mode)))
         return
     elif len(result_id) == 36:  # UUID result
         return
     elif int(anti_cheat) != last_anti_cheat:
         send_async(bot, chat.id,
-                   text=__("Cheat attempt by {name}", multi=game.translate)
+                   text=__("Cheat attempt detecked by {name} 😮 (this could be triggerd by connection issues, too.)", multi=game.translate)
                    .format(name=display_name(player.user)))
         return
     elif result_id == 'call_bluff':
