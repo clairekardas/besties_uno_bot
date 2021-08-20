@@ -437,8 +437,8 @@ def close_game(update: Update, context: CallbackContext):
 
     if user.id in game.owner:
         game.open = False
-        send_async(context.bot, chat.id, text=_("Closed the lobby. "
-                                        "No more besties can join this game."))
+        send_async(context.bot, chat.id, text=_("Closed the game lobby 😔"
+                                        "No more besties can join this game. Create a new game with /new 😇"))
         return
 
     else:
