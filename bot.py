@@ -91,8 +91,8 @@ def new_game(update: Update, context: CallbackContext):
         game.owner.append(update.message.from_user.id)
         game.mode = DEFAULT_GAMEMODE
         send_async(context.bot, chat_id,
-                   text=_("Yay, new game! 👩‍❤️‍💋‍👩 Join the game with /join hehe 😋/n"
-                          "and start the game with /start"))
+                   text=_("Yay, new game! 👩‍❤️‍💋‍👩 Join the game with /join /n "
+                          "and start the game with /start hehe 😋"))
 
 
 @user_locale
