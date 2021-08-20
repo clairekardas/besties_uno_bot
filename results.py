@@ -128,6 +128,17 @@ def add_mode_wild(results):
             InputTextMessageContent(_('Into the Wild~ 🐉'))
         )
     )
+    
+def add_mode_rainbow(results):
+    """Change mode to classic"""
+    results.append(
+        InlineQueryResultArticle(
+            "mode_rainbow",
+            title=_("🌈 Rainbow mode!"),
+            input_message_content=
+            InputTextMessageContent(_("that's kinda gay! 🏳️‍🌈🏳️‍⚧️ Important: this mode is still in development 🚧"))
+        )
+    )
 
 
 def add_mode_text(results):
@@ -206,6 +217,10 @@ def add_card(game, card, results, can_play):
         if game.mode == "text":
             results.append(
                 Sticker(str(card), sticker_file_id=c.STICKERS[str(card)], input_message_content=InputTextMessageContent("Card Played: {card}".format(card=repr(card).replace('Draw Four', '+4').replace('Draw', '+2').replace('Colorchooser', 'Color Chooser')))
+        ))
+        if game.mode == "rainbow":
+            results.append(
+                Sticker(str(card), sticker_file_id=c.STICKERS_RAINBOW[str(card)],
         ))
     else:
         results.append(
