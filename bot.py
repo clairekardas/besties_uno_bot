@@ -303,12 +303,12 @@ def select_game(update: Update, context: CallbackContext):
     def selected():
         back = [[InlineKeyboardButton(text=_("Back to last group"),
                                       switch_inline_query='')]]
-        context.bot.answerCallbackQuery(update.callback_query.id,
+        dispatcher.run_async(context.bot.answerCallbackQuery, update.callback_query.id,
                                 text=_("Please switch to the group you selected!"),
                                 show_alert=False,
                                 timeout=TIMEOUT)
 
-        context.bot.editMessageText(chat_id=update.callback_query.message.chat_id,
+        dispatcher.run_async(context.bot.editMessageText, chat_id=update.callback_query.message.chat_id,
                             message_id=update.callback_query.message.message_id,
                             text=_("Selected group: {group}\n"
                                    "<b>Make sure that you switch to the correct "
@@ -386,11 +386,11 @@ def start_game(update: Update, context: CallbackContext):
             def send_first():
                 """Send the first card and player"""
 
-                context.bot.sendSticker(chat.id,
+                dispatcher.run_async(context.bot.sendSticker, chat.id,
                                 sticker=c.STICKERS[str(game.last_card)],
                                 timeout=TIMEOUT)
 
-                context.bot.sendMessage(chat.id,
+                dispatcher.run_async(context.bot.sendMessage, chat.id,
                                 text=first_message,
                                 reply_markup=InlineKeyboardMarkup(choice),
                                 timeout=TIMEOUT)
