@@ -90,7 +90,6 @@ def new_game(update: Update, context: CallbackContext):
         game.starter = update.message.from_user
         game.owner.append(update.message.from_user.id)
         game.mode = DEFAULT_GAMEMODE
-        after-commit
         send_async(context.bot, chat_id,
                    text=_("Yay, new game! 👩‍❤️‍💋‍👩 Join the game with /join /n "
                           "and start the game with /start hehe 😋"))
@@ -157,15 +156,6 @@ def join_game(update: Update, context: CallbackContext):
         send_async(context.bot, chat.id,
                    text=_("You already joined the game. Start the game "
                           "with /start"),
-        send_async(bot, chat.id,
-                   text=_("no game running atm! "
-                          "Create a new game with /new 😋"),
-                   reply_to_message_id=update.message.message_id)
-
-    except AlreadyJoinedError:
-        send_async(bot, chat.id,
-                   text=_("You already joined the game, dumbass. Start the game "
-                          "with /start 😋"),
                    reply_to_message_id=update.message.message_id)
 
     except DeckEmptyError:
@@ -177,8 +167,6 @@ def join_game(update: Update, context: CallbackContext):
     else:
         send_async(context.bot, chat.id,
                    text=_("Joined the game"),
-                   text=_("a bestie joined the game! 😋"),
- master
                    reply_to_message_id=update.message.message_id)
 
 
@@ -556,7 +544,6 @@ def skip_player(update: Update, context: CallbackContext):
     if not player:
         send_async(context.bot, chat.id,
                    text=_("There is no running game in this chat, dumbass! 🙄"))
-                   text=_("You are not playing in a game in this chat, dumbass! 🙄"))
         return
 
     game = player.game
